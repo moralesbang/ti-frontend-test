@@ -1,6 +1,7 @@
-import logo from "./logo.svg";
-import "./App.scss";
-import { Layout, useLayoutNavigation } from "react-md";
+import {Layout, useLayoutNavigation} from 'react-md';
+
+import logo from '../logo.svg';
+import './styles.scss';
 
 const navItems = {};
 
