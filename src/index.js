@@ -1,16 +1,13 @@
 import {StrictMode} from 'react';
 import ReactDOM from 'react-dom';
-import {Configuration} from 'react-md';
-
 import './index.css';
+
 import App from './app';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <StrictMode>
-    <Configuration>
-      <App />
-    </Configuration>
+    <App />
   </StrictMode>,
   document.getElementById('root'),
 );

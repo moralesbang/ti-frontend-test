@@ -1,34 +1,23 @@
-import {Layout, useLayoutNavigation} from 'react-md';
+import {Configuration} from 'react-md';
+import {BrowserRouter} from 'react-router-dom';
 
-import logo from '../logo.svg';
+import AppLayout from './layout';
+import ProductList from './pages/product-list';
 import './styles.scss';
-
-const navItems = {};
 
 function App() {
   return (
-    <Layout
-      {...useLayoutNavigation(navItems, window.location.pathname)}
-      appBarTitle="react-md App"
-      navHeaderTitle="My App"
-    >
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    </Layout>
+    <BrowserRouter>
+      <Configuration>
+        <AppLayout>
+          {/* <Switch>
+            <Route exact path="/products" component={ProductList} />
+            <Route path="/products/:category" component={ProductList} />
+          </Switch> */}
+          <ProductList />
+        </AppLayout>
+      </Configuration>
+    </BrowserRouter>
   );
 }
 
