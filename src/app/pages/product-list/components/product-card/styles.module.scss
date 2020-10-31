@@ -1,0 +1,19 @@
+@import '~@react-md/theme/dist/color-palette';
+
+.product-card {
+  width: 100%;
+  margin: 0.5rem 1rem;
+
+  &__subtitle {
+    color: $rmd-grey-500;
+  }
+
+  &__content {
+    display: flex;
+  }
+
+  &__image {
+    width: 200px;
+    margin: 0 3rem;
+  }
+}
