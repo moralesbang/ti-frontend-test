@@ -1,6 +1,6 @@
 import {Configuration} from 'react-md';
 import {Provider} from 'react-redux';
-import {BrowserRouter} from 'react-router-dom';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
 import store from '../redux/store';
 
@@ -14,11 +14,9 @@ function App() {
       <BrowserRouter>
         <Configuration>
           <AppLayout>
-            {/* <Switch>
-            <Route exact path="/products" component={ProductList} />
-            <Route path="/products/:category" component={ProductList} />
-          </Switch> */}
-            <ProductList />
+            <Switch>
+              <Route exact path="/products" component={ProductList} />
+            </Switch>
           </AppLayout>
         </Configuration>
       </BrowserRouter>

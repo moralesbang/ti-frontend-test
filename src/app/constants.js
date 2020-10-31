@@ -1,27 +1,23 @@
-import {
-  BuildSVGIcon,
-  ComputerSVGIcon,
-  FolderSVGIcon,
-  FormatListBulletedFontIcon,
-} from 'react-md';
+import {Link} from 'react-router-dom';
 
-import {createRoute} from './utils';
-
-export const NAV_ITEMS = {
-  '/products': createRoute(
-    '/products',
-    'Products',
-    <FormatListBulletedFontIcon />,
-  ),
-  '/products/tech': createRoute('/products/tech', 'Tech', <ComputerSVGIcon />),
-  '/products/services': createRoute(
-    '/products/services',
-    'Services',
-    BuildSVGIcon,
-  ),
-  '/products/office': createRoute(
-    '/products/office',
-    'Office',
-    <FolderSVGIcon />,
-  ),
+export const PATHS = {
+  HOME: '/',
+  PRODUCTS: '/products',
+  CLIENTS: '/clients',
+  CONTACT: '/contact'
 };
+
+export const NAVIGATION_TABS = [
+  {
+    children: <Link to={PATHS.HOME}>HOME</Link>
+  },
+  {
+    children: <Link to={PATHS.PRODUCTS}>PRODUCTS</Link>
+  },
+  {
+    children: <Link to={PATHS.CLIENTS}>CLIENTS</Link>
+  },
+  {
+    children: <Link to={PATHS.CONTACT}>CONTACT</Link>
+  }
+];

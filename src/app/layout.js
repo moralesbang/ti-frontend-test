@@ -1,27 +1,25 @@
 import {element} from 'prop-types';
-import {Layout, useLayoutNavigation} from 'react-md';
-import {Link, useLocation} from 'react-router-dom';
+import {TabsManager, Tabs} from 'react-md';
+
+import {NAVIGATION_TABS} from './constants';
 
 // import {NAV_ITEMS} from './constants';
 
 import './styles.scss';
 
 function AppLayout({children}) {
-  const {pathname} = useLocation();
-
   return (
-    <Layout
-      title="My Title"
-      navHeaderTitle="My Nav Title"
-      treeProps={useLayoutNavigation({}, pathname, Link)}
-    >
-      {children}
-    </Layout>
+    <div>
+      <TabsManager tabs={NAVIGATION_TABS}>
+        <Tabs padded={true} />
+        {children}
+      </TabsManager>
+    </div>
   );
 }
 
 AppLayout.propTypes = {
-  children: element.isRequired,
+  children: element.isRequired
 };
 
 export default AppLayout;
