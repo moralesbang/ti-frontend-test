@@ -1,8 +1,10 @@
+const cors = require('cors');
 const express = require('express');
 
 const {PRODUCTS} = require('./mocks/products');
 
 const app = express();
+app.use(cors());
 
 const port = 3001;
 
